@@ -1,6 +1,7 @@
 from random import randint
 from decouple import config
 
+from termcolor import cprint
 def find_number():
     user_guess = int(input('GUESS NUMBER (FROM 1 TO 100): '))
 
@@ -8,11 +9,10 @@ def find_number():
 
     min_number = config('MIN_NUMBER', default=1, cast=int)
     max_number = config('MAX_NUMBER', default=100, cast=int)
-    attempts = config('ATTEMPTS',default=7, cast=int)
+    attempts = config('ATTEMPTS',default=3, cast=int)
     bonus = config('BONUS',default=500, cast=int)
 
     number = randint(min_number, max_number)
-
     while attempts > 0:
         if user_guess == number:
             bonus *= 2
@@ -28,4 +28,4 @@ def find_number():
             else:
                 user_guess = int(input(f'Wrong guess! You have {attempts} attempts left. Guess again: '))
 
-print(find_number())
+cprint(find_number(), 'red', 'on_cyan')
