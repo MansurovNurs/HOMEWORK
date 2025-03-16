@@ -5,8 +5,6 @@ from termcolor import cprint
 def find_number():
     user_guess = int(input('GUESS NUMBER (FROM 1 TO 100): '))
 
-
-
     min_number = config('MIN_NUMBER', default=1, cast=int)
     max_number = config('MAX_NUMBER', default=100, cast=int)
     attempts = config('ATTEMPTS',default=3, cast=int)
