@@ -17,6 +17,7 @@ def find_number():
             attempts -= 1
             return f'You won: {user_guess} attempts: {attempts} bonus: {bonus}'
 
+
         else:
             bonus -= 500
             attempts -= 1
@@ -25,5 +26,6 @@ def find_number():
                     f'\nbonus: {bonus}')
             else:
                 user_guess = int(input(f'Wrong guess! You have {attempts} attempts left. Guess again: '))
+
 
 cprint(find_number(), 'red', 'on_cyan')
