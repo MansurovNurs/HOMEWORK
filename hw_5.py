@@ -7,7 +7,7 @@ def find_number():
 
     min_number = config('MIN_NUMBER', default=1, cast=int)
     max_number = config('MAX_NUMBER', default=100, cast=int)
-    attempts = config('ATTEMPTS',default=3, cast=int)
+    attempts = config('ATTEMPTS',default=2, cast=int)
     bonus = config('BONUS',default=500, cast=int)
 
     number = randint(min_number, max_number)
